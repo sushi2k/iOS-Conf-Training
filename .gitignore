@@ -2,8 +2,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-# dependency-check report
+# gitleaks
+gitleaks.sarif
 
+# dependency-check report
 dependency-check-report.html
 
 ## User settings
