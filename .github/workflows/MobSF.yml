@@ -1,0 +1,30 @@
+# name: MobSF (scan IPA)
+#
+# on: [push,pull_request]
+#
+# jobs:
+#   build:
+#     name: Scan
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repo
+#         uses: actions/checkout@master
+#      
+#       - name: Run MobSF Analysis
+#         uses: fundacaocerti/mobsf-action@v1.7
+#         env:
+#           INPUT_FILE_NAME: Find_my_Data.ipa
+#           SCAN_TYPE: ipa
+#           OUTPUT_FILE_NAME: mobsf-report
+#
+#       - name: Upload MobSF Analysis PDF Result
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: mobsf-report.pdf
+#           path: mobsf-report.pdf
+#
+#       - name: Upload MobSF Analysis JSON Result
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: mobsf-report.json
+#           path: mobsf-report.json
