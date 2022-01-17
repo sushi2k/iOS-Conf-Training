@@ -11,6 +11,7 @@
 		261E8BD1278126A500572566 /* BiometricController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E8BD0278126A500572566 /* BiometricController.swift */; };
 		261E8BD3278126E000572566 /* visAuthClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E8BD2278126E000572566 /* visAuthClass.swift */; };
 		262F4E8C278C65CF0007DC97 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 262F4E8B278C65CE0007DC97 /* .github */; };
+		2660B43A27942CD9004A90AE /* secret in Resources */ = {isa = PBXBuildFile; fileRef = 2660B43927942CD8004A90AE /* secret */; };
 		26D0ADB024FC841B00A08AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0ADAF24FC841B00A08AD7 /* AppDelegate.swift */; };
 		26D0ADB224FC841B00A08AD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0ADB124FC841B00A08AD7 /* SceneDelegate.swift */; };
 		26D0ADB424FC841B00A08AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0ADB324FC841B00A08AD7 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		261E8BD0278126A500572566 /* BiometricController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricController.swift; sourceTree = "<group>"; };
 		261E8BD2278126E000572566 /* visAuthClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visAuthClass.swift; sourceTree = "<group>"; };
 		262F4E8B278C65CE0007DC97 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
+		2660B43927942CD8004A90AE /* secret */ = {isa = PBXFileReference; lastKnownFileType = folder; path = secret; sourceTree = "<group>"; };
 		26D0ADAC24FC841B00A08AD7 /* Find_my_Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Find_my_Data.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D0ADAF24FC841B00A08AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D0ADB124FC841B00A08AD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		26D0ADA324FC841B00A08AD7 = {
 			isa = PBXGroup;
 			children = (
+				2660B43927942CD8004A90AE /* secret */,
 				262F4E8B278C65CE0007DC97 /* .github */,
 				26D0ADAE24FC841B00A08AD7 /* iOS-Shack-v2 */,
 				26D0ADAD24FC841B00A08AD7 /* Products */,
@@ -194,6 +197,7 @@
 			files = (
 				26D0ADBC24FC841F00A08AD7 /* LaunchScreen.storyboard in Resources */,
 				26D0ADC424FD1AF600A08AD7 /* appstore.png in Resources */,
+				2660B43A27942CD9004A90AE /* secret in Resources */,
 				26D0ADB924FC841F00A08AD7 /* Assets.xcassets in Resources */,
 				26D0ADB724FC841B00A08AD7 /* Main.storyboard in Resources */,
 				262F4E8C278C65CF0007DC97 /* .github in Resources */,
