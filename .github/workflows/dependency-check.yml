@@ -1,45 +1,45 @@
-name: Dependency Check
-
-on: [push,pull_request]
-
-jobs:
-  depchecktest:
-    runs-on: ubuntu-latest
-    name: depecheck_test
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: List files in the workspace
-        run: |
-          ls ${{ github.workspace }}
-      - name: Depcheck - SARIF
-        uses: dependency-check/Dependency-Check_Action@main
-        id: Depcheck
-        with:
-          project: 'test'
-          path: '.'
-          format: 'SARIF'
-          args: >
-            --enableExperimental
-            --scan Podfile.lock
-      - name: Depcheck - HTML
-        uses: dependency-check/Dependency-Check_Action@main
-        id: Depcheck-HTML
-        with:
-          project: 'test'
-          path: '.'
-          format: 'HTML'
-          args: >
-            --enableExperimental
-            --scan Podfile.lock
-      - name: Upload Test results
-        uses: actions/upload-artifact@master
-        with:
-           name: Depcheck report
-           path: ${{github.workspace}}/reports
-      # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
-      - name: Upload Dependency Check report to CodeQL
-        if: always()
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: ${{github.workspace}}/reports/dependency-check-report.sarif
+#name: Dependency Check
+#
+#on: [push,pull_request]
+#
+#jobs:
+#  depchecktest:
+#    runs-on: ubuntu-latest
+#    name: depecheck_test
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: List files in the workspace
+#        run: |
+#          ls ${{ github.workspace }}
+#      - name: Depcheck - SARIF
+#        uses: dependency-check/Dependency-Check_Action@main
+#        id: Depcheck
+#        with:
+#          project: 'test'
+#          path: '.'
+#          format: 'SARIF'
+#          args: >
+#            --enableExperimental
+#            --scan Podfile.lock
+#      - name: Depcheck - HTML
+#        uses: dependency-check/Dependency-Check_Action@main
+#        id: Depcheck-HTML
+#        with:
+#          project: 'test'
+#          path: '.'
+#          format: 'HTML'
+#          args: >
+#            --enableExperimental
+#            --scan Podfile.lock
+#      - name: Upload Test results
+#        uses: actions/upload-artifact@master
+#        with:
+#           name: Depcheck report
+#           path: ${{github.workspace}}/reports
+#      # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
+#      - name: Upload Dependency Check report to CodeQL
+#        if: always()
+#        uses: github/codeql-action/upload-sarif@v1
+#        with:
+#          sarif_file: ${{github.workspace}}/reports/dependency-check-report.sarif
