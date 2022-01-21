@@ -1,34 +1,34 @@
-## Documentation for Workflow Syntax: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-## The name of the GitHub event that triggers the workflow.
-#name: Gitleaks
-#
-#on: [push,pull_request]
-#
-#jobs:
-# gitleaks:
-#   runs-on: ubuntu-latest
-#   steps:
-#   # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
-#   - uses: actions/checkout@v1
-#   # Gitleaks version from https://github.com/sushi2k/gitleaks-action that allows to store the output as SARIF file
-#   - name: customized gitleaks
-#     uses: sushi2k/gitleaks-action@extra-args
-#     with:
-#       extra-args: -o gitleaks.sarif -f sarif
-#   # Testing if the SARIF file was created, by listing the workspace
-#   - name: List files in the workspace
-#     if: always()
-#     run: |
-#       ls ${{ github.workspace }}
-#   # Upload the SARIF file to the Github action as output
-#   - uses: actions/upload-artifact@v2
-#     if: always()
-#     with:
-#       name: gitleaks
-#       path: gitleaks.sarif
-#   # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
-#   - name: Upload gitleaks report
-#     if: always()
-#     uses: github/codeql-action/upload-sarif@v1
-#     with:
-#       sarif_file: gitleaks.sarif
+# Documentation for Workflow Syntax: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+# The name of the GitHub event that triggers the workflow.
+name: Gitleaks
+
+on: [push,pull_request]
+
+jobs:
+ gitleaks:
+   runs-on: ubuntu-latest
+   steps:
+   # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+   - uses: actions/checkout@v1
+   # Gitleaks version from https://github.com/sushi2k/gitleaks-action that allows to store the output as SARIF file
+   - name: customized gitleaks
+     uses: sushi2k/gitleaks-action@extra-args
+     with:
+       extra-args: -o gitleaks.sarif -f sarif
+   # Testing if the SARIF file was created, by listing the workspace
+   - name: List files in the workspace
+     if: always()
+     run: |
+       ls ${{ github.workspace }}
+   # Upload the SARIF file to the Github action as output
+   - uses: actions/upload-artifact@v2
+     if: always()
+     with:
+       name: gitleaks
+       path: gitleaks.sarif
+   # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
+   - name: Upload gitleaks report
+     if: always()
+     uses: github/codeql-action/upload-sarif@v1
+     with:
+       sarif_file: gitleaks.sarif
