@@ -1,29 +1,29 @@
-# name: mobsfscan
+name: mobsfscan
 
-# # Documentation for Workflow Syntax: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-# # The name of the GitHub event that triggers the workflow.
-# on:
-#   push:
-#     branches: [ master, main ]
-#   pull_request:
-#     branches: [ master, main ]
+# Documentation for Workflow Syntax: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+# The name of the GitHub event that triggers the workflow.
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 
-# jobs:
-#   # Name of Job
-#   mobsfscan:
-#     runs-on: ubuntu-latest
-#     name: mobsfscan code scanning
-#     steps:
-#     # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
-#     - name: Checkout the code
-#       uses: actions/checkout@v2
-#     # Execute the MobSF scan and create a SARIF file
-#     - name: mobsfscan
-#       uses: MobSF/mobsfscan@main
-#       with:
-#         args: '. --sarif --output results.sarif || true'
-#     # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
-#     - name: Upload mobsfscan report
-#       uses: github/codeql-action/upload-sarif@v1
-#       with:
-#         sarif_file: results.sarif
+jobs:
+  # Name of Job
+  mobsfscan:
+    runs-on: ubuntu-latest
+    name: mobsfscan code scanning
+    steps:
+    # This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+    - name: Checkout the code
+      uses: actions/checkout@v2
+    # Execute the MobSF scan and create a SARIF file
+    - name: mobsfscan
+      uses: MobSF/mobsfscan@main
+      with:
+        args: '. --sarif --output results.sarif || true'
+    # Upload the SARIF file to Github, so the findings show up in "Security / Code Scanning alerts"
+    - name: Upload mobsfscan report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
