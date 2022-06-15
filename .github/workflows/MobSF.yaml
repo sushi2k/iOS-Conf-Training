@@ -10,6 +10,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
 
+      - run: |
+          sudo mkdir -p /home/runner/work/_temp/_github_home
+          sudo chown -R 9901:9901 /home/runner/work/_temp/_github_home
+
+          sudo mkdir -p /home/runner/work/$myRepoName/$myRepoName
+          sudo chown -R 9901:9901 /home/runner/work/$myRepoName/$myRepoName
+
       - name: Run MobSF Analysis
         uses: fundacaocerti/mobsf-action@v1.7.2
         env:
