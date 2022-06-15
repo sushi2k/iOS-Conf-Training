@@ -15,7 +15,7 @@ jobs:
       - name: Run MobSF Analysis
         uses: fundacaocerti/mobsf-action@v1.7.2
         env:
-          INPUT_FILE_NAME: iOS-Shack.ipa
+          INPUT_FILE_NAME: Find_my_Data.ipa
           SCAN_TYPE: ipa
           OUTPUT_FILE_NAME: mobsf-report
 
